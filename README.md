@@ -1,7 +1,7 @@
 <div>
-  <img src="image/logo.png" alt="Logo" align="left" width="200" style="margin-right: 20px;" />
+  <img src="image/logo.png" alt="Logo" align="left" width="350" style="margin-right: 20px;" />
   
-  # 🔍 Python Port Scanner
+  ### 🔍 Python Port Scanner
   
   **A fast and customizable port scanner built with Python.**  
   Scan targets with precision and flexibility using intuitive command-line options.
