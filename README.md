@@ -2,7 +2,7 @@
 ---
 
 <div align="center">
-  <img src="image/logo.png" alt="Logo" align="right" width="500" />
+  <img src="image/logo.png" alt="Logo" align="right" width="350" />
 
   # 🔍 Python Port Scanner
 
