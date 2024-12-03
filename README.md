@@ -7,6 +7,7 @@
   Scan targets with precision and flexibility using intuitive command-line options.
 </div>
 
+---
 
 ### 📜 Features
 - 🎯 **Target-Specific Scans**: Scan a single target effortlessly.
