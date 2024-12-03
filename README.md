@@ -9,8 +9,6 @@
   **A fast and customizable port scanner built with Python.**  
   Scan targets with precision and flexibility using intuitive command-line options.
 </div>       
----
-
 
 **A fast and customizable port scanner built with Python.**  
 Scan targets with precision and flexibility using intuitive command-line options.
