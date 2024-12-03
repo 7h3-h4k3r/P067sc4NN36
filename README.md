@@ -1,19 +1,12 @@
+<div>
+  <img src="image/logo.png" alt="Logo" align="left" width="200" style="margin-right: 20px;" />
+  
+  # 🔍 Python Port Scanner
+  
+  **A fast and customizable port scanner built with Python.**  
+  Scan targets with precision and flexibility using intuitive command-line options.
+</div>
 
-
-
-<div align="center">
-  <img src="image/logo.png" alt="Logo" align="right" width="450" />
-
-  ### 🔍 Python Port Scanner
-
-</div>       
-
----
-
-**A fast and customizable port scanner built with Python.**  
-Scan targets with precision and flexibility using intuitive command-line options.
-
----
 
 ### 📜 Features
 - 🎯 **Target-Specific Scans**: Scan a single target effortlessly.
