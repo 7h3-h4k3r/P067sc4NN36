@@ -1,13 +1,14 @@
 
----
+
 
 <div align="center">
   <img src="image/logo.png" alt="Logo" align="right" width="350" />
 
-  🔍 Python Port Scanner
+  # 🔍 Python Port Scanner
 
 </div>       
 
+---
 
 **A fast and customizable port scanner built with Python.**  
 Scan targets with precision and flexibility using intuitive command-line options.
