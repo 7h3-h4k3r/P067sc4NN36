@@ -56,13 +56,16 @@ python3 portscanner.py -Tp 192.168.1.1 -sP 20 -Ep 80
 ## 💻 Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/portscanner.git
+   git clone https://github.com/7h3-h4k3r/P067sc4NN36.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd portscanner
+   cd P067sc4NN36
    ```
 3. Run the script with Python 3.
+   ```
+   python3 python3 portscanner.py -Tp -s <target ip>
+   ```
 
 ---
 

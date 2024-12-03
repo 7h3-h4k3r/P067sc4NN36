@@ -74,7 +74,7 @@ class Scanner(threading.Thread):
   _______  \\         {Fore.WHITE}//{Fore.RED}
 /.------.\\  \\|      .'/  {Fore.WHITE}______{Fore.RED}
 //  ___  \\ \\  ||/|\\  //  {Fore.WHITE}_/_----.{Fore.RED}\\__
-|/  /.-.\\  \\ \\:|< >|// _/{Fore.BLACK}.'..\\   '--'{Fore.RED} \t\t\t D3v 3y SriDharaniTharan
+|/  /.-.\\  \\ \\:|< >|// _/{Fore.BLACK}.'..\\   '--'{Fore.RED} \t\t\t D3v 3y SriDharaniTharan (version 1.0)
    //   \\'. | \\'.|.'/ /_/ /  \\\\
   //     \\ \\_\\/" ' ~\\-'.-'    \\\\
  //       '-._| :S: |'-.__     \\\\
