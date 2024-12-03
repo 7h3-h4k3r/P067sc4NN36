@@ -2,7 +2,7 @@ Here’s a README draft for your port scanner project:
 
 ---
 
-# ![Logo](./images/logo.jpg) 🔍 Python Port Scanner
+# ![Logo](./images/logo.png) 🔍 Python Port Scanner
 
 **A fast and customizable port scanner built with Python.**  
 Scan targets with precision and flexibility using intuitive command-line options.
