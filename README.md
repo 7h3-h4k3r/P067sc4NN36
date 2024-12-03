@@ -1,8 +1,14 @@
-Here’s a README draft for your port scanner project:
 
 ---
 
-# ![Logo](image/logo.png)        
+<div align="center">
+  <img src="image/logo.png" alt="Logo" align="right" width="200" />
+
+  # 🔍 Python Port Scanner
+
+  **A fast and customizable port scanner built with Python.**  
+  Scan targets with precision and flexibility using intuitive command-line options.
+</div>       
 # 🔍 Python Port Scanner
 **A fast and customizable port scanner built with Python.**  
 Scan targets with precision and flexibility using intuitive command-line options.
