@@ -1,5 +1,5 @@
 <div>
-  <img src="image/logo.png" alt="Logo" align="left" width="350" style="margin-right: 20px;" />
+  <img src="image/logo.png" alt="Logo" align="left" width="400" style="margin-right: 20px;" />
   
   ### 🔍 Python Port Scanner
   
