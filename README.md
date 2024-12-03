@@ -9,7 +9,7 @@
 
 ---
 
-### 📜 Features
+## 📜 Features
 - 🎯 **Target-Specific Scans**: Scan a single target effortlessly.
 - 🚀 **Range-Based Scans**: Specify custom port ranges for scanning.
 - ⚡ **Fast and Reliable**: Optimized for speed and accuracy.
