@@ -46,10 +46,9 @@ ports = {
         "8080": "HTTP Alternative",
         "8443": "HTTPS Alternative",
         "9092": "Apache Kafka"
-    }   
+    }  
 class Scanner(threading.Thread):
     def __init__(self,ip,sp=1,ep=65535):
-        threading.Thread.__init__(self)
         self.ip = ip
         self.banner()
         self.UserInteraction(sp,ep)
@@ -100,7 +99,9 @@ class Threadingx(Scanner):
     def run(self):
         if(self.socket_.connect_ex((self.ip,self.port))==0):
             self.result(self.port)
-            
+        self.socket_.close()
+        
+        
 
 class InputSanitize:
         def LiveCheck(self,host):
