@@ -1,8 +1,11 @@
-import threading
+
 import socket
+import time
 import sys
 import subprocess
 from colorama import Fore
+import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ports = {
         "20": "FTP (File Transfer Protocol)",
@@ -47,25 +50,44 @@ ports = {
         "8443": "HTTPS Alternative",
         "9092": "Apache Kafka"
     }  
-class Scanner(threading.Thread):
+class Scanner:
     def __init__(self,ip,sp=1,ep=65535):
-        self.ip = ip
+        self.host = ip
+        self.max_work=100
         self.banner()
-        self.UserInteraction(sp,ep)
-    def UserInteraction(self,sp,ep):
-        for i in range(sp,ep):
-            Threadingx(self.ip,i).start()
-        
-    def result(self,port):
+        self.run_scan(sp,ep)
+
+    def result(self,port,time):
         data = list(ports)
         for i  in range(len(ports)-1):
             if int(data[i]) == port:
-                print(Fore.GREEN,port,ports.get(data[i]))
+                print(f"{Fore.GREEN}{port}{ports.get(data[i])} Scanned sec {time:.2f} Mille sec {time*1000}")
                 break
             elif(i==39):
-                print(Fore.RED,port,"(Dynamic or private network)")
+                print(f"{Fore.RED}{port} (Dynamic or private network) Scanned sec {time:.2f} Mille sec {time*1000}")
                 
-    def banner(self):  
+    def scan_port(self, port):
+        start_time = time.time()
+        duration=0
+        try:
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.settimeout(1)
+                s.connect((self.host, port))
+                duration = time.time() - start_time
+                return port, True , duration
+        except:
+            return port, False , duration
+
+    def run_scan(self, startRange ,port_range):
+        with ThreadPoolExecutor(max_workers=self.max_work) as executor:
+            futures = [executor.submit(self.scan_port, port) for port in range(startRange,port_range)]
+            for future in as_completed(futures):
+                port, is_open ,duration = future.result()
+                if is_open:
+                    self.result(port,duration)         
+    def banner(self): 
+        os.system('cls' if os.name == 'nt' else 'clear')
+ 
         art = f"""
 {Fore.RED}   ____                      , 
   /---.'.__             {Fore.WHITE}____//{Fore.RED}
@@ -73,7 +95,7 @@ class Scanner(threading.Thread):
   _______  \\         {Fore.WHITE}//{Fore.RED}
 /.------.\\  \\|      .'/  {Fore.WHITE}______{Fore.RED}
 //  ___  \\ \\  ||/|\\  //  {Fore.WHITE}_/_----.{Fore.RED}\\__
-|/  /.-.\\  \\ \\:|< >|// _/{Fore.BLACK}.'..\\   '--'{Fore.RED} \t\t\t D3v 3y SriDharaniTharan (version 1.0)
+|/  /.-.\\  \\ \\:|< >|// _/{Fore.BLACK}.'..\\   '--'{Fore.RED} \t\t\t D3v 3y SriDharaniTharan (version 2.0)
    //   \\'. | \\'.|.'/ /_/ /  \\\\
   //     \\ \\_\\/" ' ~\\-'.-'    \\\\
  //       '-._| :S: |'-.__     \\\\
@@ -89,21 +111,10 @@ class Scanner(threading.Thread):
         print(art)
 
     
-
-class Threadingx(Scanner):
-    def __init__(self,ip,port):
-        threading.Thread.__init__(self)
-        self.port = port
-        self.ip = ip
-        self.socket_= socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    def run(self):
-        if(self.socket_.connect_ex((self.ip,self.port))==0):
-            self.result(self.port)
-        self.socket_.close()
         
         
 
-class InputSanitize:
+class LiveIt:
         def LiveCheck(self,host):
                 try:
                         subprocess.run(["ping","-c","1",host],stdin = subprocess.PIPE , stderr = subprocess.PIPE,check = True)
@@ -112,7 +123,7 @@ class InputSanitize:
                         return False
         def help(self,bin):
                 print(f"""
-Usage {bin} -Tp -s <target ip> OR {bin} -Tp <target ip> -sP <port> -Ep <port>
+        Usage {bin} -Tp -s <target ip> OR {bin} -Tp <target ip> -sP <port> -Ep <port>
                 
         -h  or --help
 
