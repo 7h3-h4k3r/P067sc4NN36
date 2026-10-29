@@ -17,7 +17,14 @@ Scan targets with precision and flexibility using intuitive command-line options
 ---
 
 ## 🔧 Usage
+### **installation process**
+```bash
+git clone https://github.com/7h3-h4k3r/P067sc4NN36.git 
 
+```
+- **Description**: download lib colorama using pip to install if you don't already have.
+
+---
 ### Option 1: **Quick Target Scan**
 ```bash
 python3 portscanner.py -Tp -s <target-ip>
