@@ -4,10 +4,12 @@ from libs.__init__ import  Scanner
 
 class LiveIt:
         def LiveCheck(self,host):
+                
                 try:
                         subprocess.run(["ping","-c","1",host],stdin = subprocess.PIPE , stderr = subprocess.PIPE,check = True)
                         return True
                 except:
+
                         return False
         def help(self,bin):
                 print(f"""
@@ -28,17 +30,20 @@ class LiveIt:
         """)
 
         def argvcheck(self):
-                if(len(sys.argv) == 4 and sys.argv[1]=="-Tp" and sys.argv[2] == "-s" and self.LiveCheck(sys.argv[3])):
+                if self.LiveCheck(sys.argv[3]) == 0:
+                        return False , 'Host is not alive'
+                if(len(sys.argv) == 4 and sys.argv[1]=="-Tp" and sys.argv[2] == "-s"):
                        Scanner(sys.argv[3])   
-                       return True   
+                       return True , 'argument\'s are missing Using --help '
                 elif(len(sys.argv)== 7 and sys.argv[1]=="-Tp" and sys.argv[3] == "-sP" and sys.argv[5]=="-Ep"):
-                        if(int(sys.argv[4])> 0 and  int(sys.argv[6])>int(sys.argv[4]) and int(sys.argv[6])<=65535 and self.LiveCheck(sys.argv[2])):
+                                
+                        if(int(sys.argv[4])> 0 and  int(sys.argv[6])>int(sys.argv[4]) and int(sys.argv[6])<=65535 ):
                               Scanner(sys.argv[2],int(sys.argv[4]),int(sys.argv[6]))
                               return True
                         else:
                                 self.help(sys.argv[0])
-                                return False
+                                return False , 'invalied argument you gaved'
                 else:
                         self.help(sys.argv[0])
-                        return False
+                        return False , 'invalied argument you gaved'
                 
